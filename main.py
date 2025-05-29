@@ -1,13 +1,13 @@
-# academic_system_cli/main.py
-import os # For clearing screen
-import auth # Import authentication functions
-from models import User, Administrator, Lecturer, Student, Course, Group, Grade
-from database_repository import DatabaseRepository # Import the new repository
 
-# Global variable to store the currently logged-in user
+import os 
+import auth # I
+from models import User, Administrator, Lecturer, Student, Course, Group, Grade
+from database_repository import DatabaseRepository 
+
+
 current_user = None
-# Global instance of the repository
-system_repo = None # Will be initialized in main()
+
+system_repo = None 
 
 # --- Utility Functions ---
 def clear_screen():
@@ -61,8 +61,7 @@ def logout():
     print("\nYou have been logged out.")
     input("Press Enter to continue...")
 
-# --- Admin Menu Functions ---
-
+# --- Admin services ---
 def admin_manage_users():
     global system_repo
     while True:
@@ -425,8 +424,7 @@ def admin_menu():
         elif choice == 0:
             break
 
-# --- Lecturer Menu Functions ---
-
+# --- Lecturer services ---
 def lecturer_enter_grade():
     global system_repo
     while True:
@@ -569,8 +567,7 @@ def lecturer_menu():
         elif choice == 0:
             break
 
-# --- Student Menu Functions ---
-
+# --- Student services ---
 def student_view_grades():
     global system_repo
     clear_screen()
