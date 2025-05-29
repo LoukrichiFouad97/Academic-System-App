@@ -1,0 +1,35 @@
+# Python specific
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# IDE specific (e.g., VS Code, PyCharm)
+.vscode/
+.idea/
+
+# PyInstaller / Build artifacts
+build/
+dist/
+*.spec
+*.exe
+*.dmg
+*.pkg
+*.app
+
+# Database files
+database.json
+*.db
+*.sqlite3
+
+# Logs
+*.log
+
+# Operating System Files
+.DS_Store # macOS
+Thumbs.db # Windows
