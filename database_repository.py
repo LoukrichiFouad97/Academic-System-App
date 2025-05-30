@@ -1,4 +1,3 @@
-# academic_system_cli/database_repository.py
 import sqlite3
 import bcrypt
 from models import User, Administrator, Lecturer, Student, Course, Group, Grade
@@ -106,16 +105,14 @@ class DatabaseRepository:
             }
             user_class = role_map.get(row['role'], User) # Default to User if role is unexpected
 
-            # --- CRITICAL FIX HERE ---
-            # If it's a specific role class (Admin, Lecturer, Student),
-            # don't pass the 'role' argument again, as it's hardcoded in their __init__.
+        
             if user_class in [Administrator, Lecturer, Student]:
                 return user_class(row['id'], row['name'], row['surname'],
                                   row['username'], row['password_hash'])
-            else: # For the base User class, or if role is unexpected, pass all args
+            else:
                 return User(row['id'], row['name'], row['surname'],
                             row['username'], row['password_hash'], row['role'])
-            # --- END CRITICAL FIX ---
+        
 
         elif obj_type == "courses":
             return Course(row['id'], row['name'], row['lecturer_id'])

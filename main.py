@@ -61,6 +61,12 @@ def logout():
     print("\nYou have been logged out.")
     input("Press Enter to continue...")
 
+###################################################################
+
+########################## SERVICES ###############################
+
+###################################################################
+
 # --- Admin services ---
 def admin_manage_users():
     global system_repo
@@ -643,7 +649,6 @@ def student_menu():
             break
 
 # --- Main Application Loop ---
-
 def main():
     global system_repo # Declare that we're using the global system_repo
     system_repo = DatabaseRepository() # Instantiate the DatabaseRepository here

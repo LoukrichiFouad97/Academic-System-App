@@ -1,4 +1,3 @@
-# academic_system_cli/auth.py
 import bcrypt
 from models import Administrator
 from database_repository import DATABASE_NAME
@@ -10,8 +9,6 @@ def hash_password(password):
 def check_password(hashed_password, password):
     """Verifies a plaintext password against a bcrypt hashed password."""
     try:
-        # --- FIX IS HERE ---
-        # Change 'utf-255' to 'utf-8' for the plaintext password encoding
         return bcrypt.checkpw(password.encode('utf-8'), hashed_password.encode('utf-8'))
     except ValueError:
         return False
